@@ -240,7 +240,7 @@ p { margin: 0; }
 .hero-inner {
   max-width: var(--maxw); margin: 0 auto; padding: 40px 24px 52px;
   display: grid; grid-template-columns: 1fr 1.06fr;
-  gap: 68px; align-items: center;
+  gap: 68px; align-items: start;
 }
 
 .hero-rating { display: flex; align-items: center; gap: 10px; margin-bottom: 22px; }
@@ -248,8 +248,8 @@ p { margin: 0; }
 .hero-rating span { font-size: 13px; color: var(--ink-soft); font-weight: 500; }
 
 .hero h1 {
-  font-size: clamp(54px, 7.4vw, 104px);
-  line-height: .92;
+  font-size: clamp(48px, 5.6vw, 82px);
+  line-height: .95;
   letter-spacing: -.035em;
   margin-bottom: 24px;
 }
@@ -404,14 +404,15 @@ p { margin: 0; }
 .trust-row svg { color: var(--caramel); flex: none; }
 
 /* hero image */
-.hero-media { position: relative; }
+.hero-media { position: relative; align-self: stretch; }
 .hero-frame {
   position: relative;
   border-radius: 28px;
   overflow: hidden;
   box-shadow: var(--shadow-lg);
-  aspect-ratio: 16 / 10;
   background: var(--cream-deep);
+  height: 100%;
+  min-height: 420px;
 }
 .hero-frame img,
 .hero-frame video { width: 100%; height: 100%; object-fit: cover; display: block; }
@@ -454,7 +455,7 @@ section { position: relative; }
 
 /* ============ PROBLEM ============ */
 .prob-grid {
-  display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start;
 }
 .prob-copy h2 { font-size: clamp(34px, 4.4vw, 54px); margin-bottom: 22px; }
 .prob-copy h2 em { font-style: italic; color: var(--terracotta); }
@@ -480,12 +481,12 @@ section { position: relative; }
 
 .prob-media {
   border-radius: 24px; overflow: hidden; box-shadow: var(--shadow-md);
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 1 / 1;
 }
 .prob-media img { width: 100%; height: 100%; object-fit: cover; }
 
 /* ============ TEXTURE ============ */
-.tex-grid { display: grid; grid-template-columns: 1.05fr 1fr; gap: 64px; align-items: center; }
+.tex-grid { display: grid; grid-template-columns: 1.05fr 1fr; gap: 64px; align-items: start; }
 .tex-media {
   border-radius: 24px; overflow: hidden; box-shadow: var(--shadow-lg);
   aspect-ratio: 1 / 1;
@@ -517,7 +518,7 @@ section { position: relative; }
 /* ============ INGREDIENTS ============ */
 .ingr-grid {
   display: grid; grid-template-columns: 1fr .92fr;
-  gap: 56px; align-items: center;
+  gap: 56px; align-items: start;
 }
 .ingr-copy h2 { font-size: clamp(30px, 3.6vw, 48px); margin-bottom: 18px; }
 .ingr-copy > p { font-size: 16.5px; color: var(--ink-soft); max-width: 42ch; }
@@ -557,7 +558,7 @@ section { position: relative; }
 .scent-split {
   display: grid;
   grid-template-columns: minmax(0, 1.15fr) minmax(0, .85fr);
-  align-items: center;
+  align-items: start;
   gap: clamp(30px, 4.5vw, 72px);
   padding-right: clamp(24px, calc((100vw - 1240px) / 2 + 24px), 420px);
 }
@@ -980,7 +981,8 @@ body.bar-on .sp-toast { bottom: calc(92px + env(safe-area-inset-bottom, 0px)); }
   .hero h1 { order: 2; font-size: clamp(38px, 10.5vw, 56px); margin-bottom: 10px; }
   .hero-sub { order: 3; font-size: 15.5px; line-height: 1.5; margin-bottom: 14px; }
   .hero-media { order: 4; margin-bottom: 14px; }
-  .hero-frame { aspect-ratio: 16 / 10; min-height: 220px; background: var(--cream-deep); }
+  .hero-media { align-self: auto; }
+  .hero-frame { height: auto; aspect-ratio: 16 / 10; min-height: 220px; background: var(--cream-deep); }
   .promo-pill { order: 5; align-self: flex-start; margin-bottom: 14px; }
   .buy-unit { order: 6; padding-top: 14px; }
   .buy-name { font-size: 18px; margin-bottom: 4px; }
