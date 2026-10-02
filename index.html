@@ -408,6 +408,11 @@ p { margin: 0; }
   padding-top: 18px;
   border-top: 1px solid var(--border);
 }
+.hero-buy-action {
+  margin-top: 22px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+}
 
 /* hero image */
 .hero-media { position: relative; }
@@ -1104,6 +1109,30 @@ body.bar-on .sp-toast { bottom: calc(92px + env(safe-area-inset-bottom, 0px)); }
         <li><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Free gift included</li>
         <li><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Small-batch, handmade</li>
       </ul>
+
+      <div class="hero-buy-action">
+        <div class="opt-head">
+          <span class="size-label">Choose your size</span>
+          <div class="qty-stepper" role="group" aria-label="Quantity">
+            <button type="button" data-qty="-1" aria-label="Decrease quantity">&minus;</button>
+            <span class="qty-val" id="qtyVal" aria-live="polite">1</span>
+            <button type="button" data-qty="1" aria-label="Increase quantity">+</button>
+          </div>
+        </div>
+        <div class="size-opts" role="group" aria-label="Select size">
+          <button class="size-opt" data-size="3" aria-pressed="true">3 oz</button>
+          <button class="size-opt" data-size="5" aria-pressed="false">5 oz</button>
+          <button class="size-opt" data-size="8" aria-pressed="false">8 oz</button>
+        </div>
+        <a class="btn-buy" data-cart href="https://mokoscosmajix.com/cart/43677806035135:1?storefront=true">
+          <span>Get Softer Skin Now</span>
+          <span class="bprice" data-total>$18.70</span>
+        </a>
+        <div class="ship-meter">
+          <div class="ship-track"><div class="ship-fill" id="shipFill"></div></div>
+          <p class="ship-note" id="shipNote"></p>
+        </div>
+      </div>
     </div>
 
     <div class="hero-copy">
@@ -1130,30 +1159,6 @@ body.bar-on .sp-toast { bottom: calc(92px + env(safe-area-inset-bottom, 0px)); }
           <span class="price-now" data-price-now>$18.70</span>
           <span class="price-was" data-price-was>$22.00</span>
           <span class="price-save">Save 15%</span>
-        </div>
-
-        <div class="opt-head">
-          <span class="size-label">Choose your size</span>
-          <div class="qty-stepper" role="group" aria-label="Quantity">
-            <button type="button" data-qty="-1" aria-label="Decrease quantity">&minus;</button>
-            <span class="qty-val" id="qtyVal" aria-live="polite">1</span>
-            <button type="button" data-qty="1" aria-label="Increase quantity">+</button>
-          </div>
-        </div>
-        <div class="size-opts" role="group" aria-label="Select size">
-          <button class="size-opt" data-size="3" aria-pressed="true">3 oz</button>
-          <button class="size-opt" data-size="5" aria-pressed="false">5 oz</button>
-          <button class="size-opt" data-size="8" aria-pressed="false">8 oz</button>
-        </div>
-
-        <a class="btn-buy" data-cart href="https://mokoscosmajix.com/cart/43677806035135:1?storefront=true">
-          <span>Get Softer Skin Now</span>
-          <span class="bprice" data-total>$18.70</span>
-        </a>
-
-        <div class="ship-meter">
-          <div class="ship-track"><div class="ship-fill" id="shipFill"></div></div>
-          <p class="ship-note" id="shipNote"></p>
         </div>
 
       </div>
