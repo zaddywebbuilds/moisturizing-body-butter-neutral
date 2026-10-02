@@ -1,0 +1,6 @@
+# Only track files in this project directory
+/*
+!/index.html
+!/moisturizing-body-butter-neutral-*.jpg
+!/moisturizing-body-butter-neutral-*.png
+!/.gitignore
