@@ -404,18 +404,18 @@ p { margin: 0; }
 .trust-row svg { color: var(--caramel); flex: none; }
 
 /* hero image */
-.hero-media { position: relative; align-self: stretch; }
+.hero-media { position: relative; }
 .hero-frame {
   position: relative;
   border-radius: 28px;
   overflow: hidden;
   box-shadow: var(--shadow-lg);
   background: var(--cream-deep);
-  height: 100%;
-  min-height: 420px;
+  aspect-ratio: 752 / 416;
+  width: 100%;
 }
 .hero-frame img { width: 100%; height: 100%; object-fit: cover; display: block; }
-.hero-frame video { width: 100%; height: 100%; object-fit: contain; display: block; }
+.hero-frame video { width: 100%; height: 100%; object-fit: cover; display: block; }
 .hero-sound {
   position: absolute; bottom: 14px; right: 14px; z-index: 2;
   width: 38px; height: 38px; border-radius: 50%;
@@ -1080,6 +1080,20 @@ body.bar-on .sp-toast { bottom: calc(92px + env(safe-area-inset-bottom, 0px)); }
 <section class="hero" aria-labelledby="hero-h">
   <div class="hero-inner">
 
+    <div class="hero-media">
+      <div class="hero-frame">
+        <video id="heroVid" src="neutral-hero.mp4"
+               poster="neutral-product-wide.jpg"
+               autoplay muted loop playsinline
+               preload="metadata"
+               aria-label="Neutral Body Butter product video"></video>
+        <button class="hero-sound" id="heroSound" aria-label="Unmute video">
+          <svg id="iconMute" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>
+          <svg id="iconUnmute" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" hidden><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+        </button>
+      </div>
+    </div>
+
     <div class="hero-copy">
       <div class="hero-rating">
         <span class="stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
@@ -1139,19 +1153,6 @@ body.bar-on .sp-toast { bottom: calc(92px + env(safe-area-inset-bottom, 0px)); }
       </div>
     </div>
 
-    <div class="hero-media">
-      <div class="hero-frame">
-        <video id="heroVid" src="neutral-hero.mp4"
-               poster="neutral-product-wide.jpg"
-               autoplay muted loop playsinline
-               preload="metadata"
-               aria-label="Neutral Body Butter product video"></video>
-        <button class="hero-sound" id="heroSound" aria-label="Unmute video">
-          <svg id="iconMute" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>
-          <svg id="iconUnmute" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" hidden><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
-        </button>
-      </div>
-    </div>
 
   </div>
 </section>
