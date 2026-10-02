@@ -413,7 +413,19 @@ p { margin: 0; }
   aspect-ratio: 16 / 10;
   background: var(--cream-deep);
 }
-.hero-frame img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.hero-frame img,
+.hero-frame video { width: 100%; height: 100%; object-fit: cover; display: block; }
+.hero-sound {
+  position: absolute; bottom: 14px; right: 14px; z-index: 2;
+  width: 38px; height: 38px; border-radius: 50%;
+  background: rgba(252,248,242,.88);
+  backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(224,210,191,.7);
+  display: grid; place-items: center;
+  color: var(--ink-soft);
+  transition: all .22s var(--ease);
+}
+.hero-sound:hover { background: var(--ivory); color: var(--ink); }
 
 /* ============ BENEFIT STRIP ============ */
 .strip { background: var(--ink); color: var(--cream); }
@@ -1126,9 +1138,15 @@ body.bar-on .sp-toast { bottom: calc(92px + env(safe-area-inset-bottom, 0px)); }
 
     <div class="hero-media">
       <div class="hero-frame">
-        <img src="moisturizing-body-butter-neutral-3928809.png"
-             alt="Open jar of Neutral Body Butter showing its whipped texture beside pieces of dark chocolate"
-             width="946" height="946" fetchpriority="high">
+        <video id="heroVid" src="neutral-hero.mp4"
+               poster="neutral-product-wide.jpg"
+               autoplay muted loop playsinline
+               preload="metadata"
+               aria-label="Neutral Body Butter product video"></video>
+        <button class="hero-sound" id="heroSound" aria-label="Unmute video">
+          <svg id="iconMute" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>
+          <svg id="iconUnmute" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" hidden><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+        </button>
       </div>
     </div>
 
@@ -1185,8 +1203,8 @@ body.bar-on .sp-toast { bottom: calc(92px + env(safe-area-inset-bottom, 0px)); }
     </div>
 
     <div class="prob-media reveal">
-      <img src="moisturizing-body-butter-neutral-1320617.jpg"
-           alt="Neutral Body Butter jar on a wooden tray beside dried wheat stalks in warm morning light"
+      <img src="neutral-bathroom-shelf.jpg"
+           alt="Neutral Body Butter jar on a bathroom shelf beside a folded towel and amber soap dispenser"
            width="1000" height="1000" loading="lazy">
     </div>
   </div>
@@ -1196,9 +1214,9 @@ body.bar-on .sp-toast { bottom: calc(92px + env(safe-area-inset-bottom, 0px)); }
 <section class="sec sec-cream">
   <div class="wrap tex-grid">
     <div class="tex-media reveal">
-      <img src="moisturizing-body-butter-neutral-3928809.png"
-           alt="Open jar of Neutral Body Butter showing its whipped cream-like texture with chocolate pieces beside it"
-           width="946" height="946" loading="lazy">
+      <img src="neutral-texture-closeup.jpg"
+           alt="Close-up of Neutral Body Butter's whipped texture with the jar visible in the background"
+           width="1000" height="1000" loading="lazy">
     </div>
     <div class="tex-copy reveal">
       <span class="eyebrow">The texture</span>
@@ -1232,7 +1250,7 @@ body.bar-on .sp-toast { bottom: calc(92px + env(safe-area-inset-bottom, 0px)); }
           <p>A rich blend of Cocoa, Shea, and Mango butters helps dry skin feel softer, smoother, and deeply moisturized.</p>
         </div>
         <div class="ben-media">
-          <img src="moisturizing-body-butter-neutral-1320617.jpg" alt="Neutral Body Butter jar on a wooden tray in warm light" width="1000" height="1000" loading="lazy">
+          <img src="neutral-skin-glow.jpg" alt="Woman's arm showing smooth, luminous skin after applying Neutral Body Butter" width="1000" height="1000" loading="lazy">
         </div>
       </article>
 
@@ -1243,7 +1261,7 @@ body.bar-on .sp-toast { bottom: calc(92px + env(safe-area-inset-bottom, 0px)); }
           <p>The rich butter and oil blend conditions rough-feeling areas and leaves skin looking soft and naturally radiant.</p>
         </div>
         <div class="ben-media">
-          <img src="moisturizing-body-butter-neutral-7198973.jpg" alt="Two jars of Neutral Body Butter displayed on a wooden tray with wheat stalks" width="1000" height="1000" loading="lazy">
+          <img src="neutral-hand-scoop.jpg" alt="Hand scooping whipped butter from an open jar of Neutral Body Butter" width="1000" height="1000" loading="lazy">
         </div>
       </article>
 
@@ -1254,7 +1272,7 @@ body.bar-on .sp-toast { bottom: calc(92px + env(safe-area-inset-bottom, 0px)); }
           <p>Thick and velvety in the jar, but designed to absorb beautifully without leaving a heavy, sticky finish.</p>
         </div>
         <div class="ben-media">
-          <img src="moisturizing-body-butter-neutral-3928809.png" alt="Open jar of Neutral Body Butter showing the whipped texture" width="946" height="946" loading="lazy">
+          <img src="neutral-jar-silk.jpg" alt="Neutral Body Butter jar on cream silk fabric with a chocolate piece and butter dollop" width="1000" height="1000" loading="lazy">
         </div>
       </article>
 
@@ -1265,7 +1283,7 @@ body.bar-on .sp-toast { bottom: calc(92px + env(safe-area-inset-bottom, 0px)); }
           <p>A soft, rich chocolate aroma adds a warm sensory finish to your everyday body-care routine.</p>
         </div>
         <div class="ben-media">
-          <img src="moisturizing-body-butter-neutral-1423521.jpg" alt="All three sizes of Neutral Body Butter stacked on a wooden tray" width="1000" height="1000" loading="lazy">
+          <img src="neutral-jar-chocolate.png" alt="Open jar of Neutral Body Butter with chocolate pieces beside it on a warm background" width="946" height="946" loading="lazy">
         </div>
       </article>
     </div>
@@ -1308,7 +1326,7 @@ body.bar-on .sp-toast { bottom: calc(92px + env(safe-area-inset-bottom, 0px)); }
     </div>
 
     <div class="ingr-media reveal">
-      <img src="moisturizing-body-butter-neutral-7198973.jpg"
+      <img src="neutral-jars-two.jpg"
            alt="Two jars of Neutral Body Butter on a wooden tray beside wheat stalks and a warm orange cloth"
            width="1000" height="1000" loading="lazy">
     </div>
@@ -1319,9 +1337,9 @@ body.bar-on .sp-toast { bottom: calc(92px + env(safe-area-inset-bottom, 0px)); }
 <section class="sec sec-deep scent" aria-labelledby="scent-h">
   <div class="scent-split">
     <figure class="scent-media reveal">
-      <img src="moisturizing-body-butter-neutral-3928809.png"
-           alt="Open jar of Neutral Body Butter beside pieces of dark chocolate, showing the whipped cocoa-scented butter"
-           width="946" height="946" loading="lazy">
+      <img src="neutral-product-wide.jpg"
+           alt="Neutral Body Butter jar with chocolate pieces and cocoa powder on a warm cream background"
+           width="1000" height="1000" loading="lazy">
     </figure>
 
     <div class="scent-copy reveal">
@@ -1411,8 +1429,8 @@ body.bar-on .sp-toast { bottom: calc(92px + env(safe-area-inset-bottom, 0px)); }
       <h2>Made to be seen on your shelf.</h2>
     </div>
     <div class="show-band reveal">
-      <img src="moisturizing-body-butter-neutral-1423521.jpg"
-           alt="All three sizes of Neutral Body Butter stacked on a wooden tray in warm afternoon light"
+      <img src="neutral-jars-sizes.jpg"
+           alt="All three sizes of Neutral Body Butter stacked together showing the 3oz, 5oz and 8oz jars"
            width="1000" height="1000" loading="lazy">
       <div class="show-band-note">
         <span>3 oz</span><span>5 oz</span><span>8 oz</span>
@@ -1595,8 +1613,8 @@ body.bar-on .sp-toast { bottom: calc(92px + env(safe-area-inset-bottom, 0px)); }
 <section class="finale">
   <div class="wrap">
     <div class="finale-media reveal">
-      <img src="moisturizing-body-butter-neutral-7198973.jpg"
-           alt="Two jars of Neutral Body Butter arranged on a wooden tray with warm cocoa styling"
+      <img src="neutral-product-pedestal.jpg"
+           alt="Neutral Body Butter jar centered on a white pedestal surrounded by flowing cream butter swirls"
            width="1000" height="1000" loading="lazy">
     </div>
 
@@ -1667,7 +1685,7 @@ body.bar-on .sp-toast { bottom: calc(92px + env(safe-area-inset-bottom, 0px)); }
 <div class="sticky-bar" id="stickyBar">
   <div class="sticky-inner">
     <div class="sticky-thumb">
-      <img src="moisturizing-body-butter-neutral-3928809.png" alt="" width="92" height="92">
+      <img src="neutral-jar-chocolate.png" alt="" width="92" height="92">
     </div>
     <div class="sticky-info">
       <div class="sticky-name">Neutral Body Butter</div>
@@ -1693,7 +1711,7 @@ body.bar-on .sp-toast { bottom: calc(92px + env(safe-area-inset-bottom, 0px)); }
     </button>
 
     <div class="popup-img">
-      <img src="moisturizing-body-butter-neutral-1320617.jpg" alt="Neutral Body Butter jar on a wooden tray in warm light" width="1000" height="1000" loading="lazy">
+      <img src="neutral-jar-lifestyle.jpg" alt="Neutral Body Butter jar on a wooden tray in warm light" width="1000" height="1000" loading="lazy">
     </div>
 
     <div class="popup-body">
@@ -1724,7 +1742,7 @@ body.bar-on .sp-toast { bottom: calc(92px + env(safe-area-inset-bottom, 0px)); }
 <div class="sp-toast" id="spToast" role="status" aria-live="polite">
   <button class="sp-close" id="spClose" aria-label="Dismiss">&times;</button>
   <div class="sp-avatar">
-    <img src="moisturizing-body-butter-neutral-3928809.png" alt="" width="88" height="88">
+    <img src="neutral-jar-chocolate.png" alt="" width="88" height="88">
   </div>
   <div class="sp-body">
     <div class="sp-name" id="spName">Nicole from Charlotte, NC</div>
@@ -1944,6 +1962,25 @@ body.bar-on .sp-toast { bottom: calc(92px + env(safe-area-inset-bottom, 0px)); }
     track("newsletter_signup", { method: "exit_popup" });
     setTimeout(function () { popup.classList.remove("open"); }, 4200);
   });
+
+  /* ---------- hero video ---------- */
+  var vid = document.getElementById("heroVid");
+  var soundBtn = document.getElementById("heroSound");
+  var iconMute = document.getElementById("iconMute");
+  var iconUnmute = document.getElementById("iconUnmute");
+  if (vid && soundBtn) {
+    soundBtn.addEventListener("click", function () {
+      vid.muted = !vid.muted;
+      soundBtn.setAttribute("aria-label", vid.muted ? "Unmute video" : "Mute video");
+      iconMute.hidden = !vid.muted;
+      iconUnmute.hidden = vid.muted;
+    });
+    if ("IntersectionObserver" in window) {
+      new IntersectionObserver(function (entries) {
+        if (entries[0].isIntersecting) { vid.play(); } else { vid.pause(); }
+      }, { threshold: 0.2 }).observe(vid);
+    }
+  }
 
   /* ---------- social proof toasts ---------- */
   var BUYERS = [
